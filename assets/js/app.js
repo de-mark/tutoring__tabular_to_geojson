@@ -2,16 +2,6 @@ let defaultMap = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/
     attribution: '© OpenStreetMap contributors, © CartoDB'
 });
 
-// let defaultMap = L.tileLayer( "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png'",
-// {
-//     attribution:
-//     'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
-// });
-
-let baseMaps = {
-    "Default Map": defaultMap,
-};
-
 let data1999 = new L.layerGroup();
 let data2005 = new L.layerGroup();
 let data2017 = new L.layerGroup();
@@ -31,7 +21,7 @@ let overlays = {
     "2017": data2017
 };
 
-L.control.layers(baseMaps, overlays, {collapsed: false}).addTo(map);
+L.control.layers(null, overlays, {collapsed: false}).addTo(map);
 
 const generateCircleStyle = (feature, year) => {
     let size = year == 1991 ? feature.properties.CO2_1990 : 
@@ -68,7 +58,7 @@ d3.json("./data/clean/emissions.json").then((emissionsData) => {
         },
         onEachFeature: (feature, layer) => {
             layer.bindPopup(`
-                <div>
+                <div style="text-align:center">
                 <h2>1991</h2>
                 <hr>
                 <h3>${feature.properties.country_name}</h3>
@@ -88,7 +78,7 @@ d3.json("./data/clean/emissions.json").then((emissionsData) => {
         },
         onEachFeature: (feature, layer) => {
             layer.bindPopup(`
-                <div>
+                <div style="text-align:center">
                 <h2>2005</h2>
                 <hr>
                 <h3>${feature.properties.country_name}</h3>
@@ -108,7 +98,7 @@ d3.json("./data/clean/emissions.json").then((emissionsData) => {
         },
         onEachFeature: (feature, layer) => {
             layer.bindPopup(`
-                <div>
+                <div style="text-align:center">
                 <h2>2017</h2>
                 <hr>
                 <h3>${feature.properties.country_name}</h3>
