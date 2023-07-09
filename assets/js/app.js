@@ -59,9 +59,9 @@ d3.json("./data/clean/emissions.json").then((emissionsData) => {
         onEachFeature: (feature, layer) => {
             layer.bindPopup(`
                 <div style="text-align:center">
-                <h2>1991</h2>
+                <h3>1991</h3>
                 <hr>
-                <h3>${feature.properties.country_name}</h3>
+                <h4>${feature.properties.country_name}</h4>
                 <hr>
                 <p><b>CO<sub>2</sub></b> ${feature.properties.CO2_1990}</p>
                 </div>
@@ -79,9 +79,9 @@ d3.json("./data/clean/emissions.json").then((emissionsData) => {
         onEachFeature: (feature, layer) => {
             layer.bindPopup(`
                 <div style="text-align:center">
-                <h2>2005</h2>
+                <h3>2005</h3>
                 <hr>
-                <h3>${feature.properties.country_name}</h3>
+                <h4>${feature.properties.country_name}</h4>
                 <hr>
                 <p><b>CO<sub>2</sub></b> ${feature.properties.CO2_2005}</p>
                 </div>
@@ -99,9 +99,9 @@ d3.json("./data/clean/emissions.json").then((emissionsData) => {
         onEachFeature: (feature, layer) => {
             layer.bindPopup(`
                 <div style="text-align:center">
-                <h2>2017</h2>
+                <h3>2017</h3>
                 <hr>
-                <h3>${feature.properties.country_name}</h3>
+                <h4>${feature.properties.country_name}</h4>
                 <hr>
                 <p><b>CO<sub>2</sub></b> ${feature.properties.CO2_2017}</p>
                 </div>
