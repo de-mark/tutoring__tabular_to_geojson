@@ -1,3 +1,14 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.innerContainer {
+    text-align: center;
+}
+
 #map {
     max-width: 100%;
     width: 500px;
