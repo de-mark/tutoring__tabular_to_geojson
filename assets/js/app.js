@@ -27,7 +27,7 @@ let overlays = {
     "2017": data2017
 };
 
-L.control.layers(baseMaps, overlays).addTo(map);
+L.control.layers(baseMaps, overlays, {collapsed: false}).addTo(map);
 
 const generateCircleStyle = (feature, year) => {
     let size = year == 1991 ? feature.properties.CO2_1990 : 
